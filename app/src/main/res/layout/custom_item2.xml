@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="310dp"
+    android:layout_height="310dp"
+    android:id="@+id/custom_item2">
+
+    <ImageView
+        android:id="@+id/image_room_full_id"
+        android:layout_width="310dp"
+        android:layout_height="210dp"
+        android:src="@drawable/room" />
+
+    <TextView
+        android:id="@+id/title_room_full_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_room_full_id"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="34dp"
+        android:text="Quarto bonito em Recife!"
+        android:textSize="12pt" />
+
+    <ImageView
+        android:id="@+id/review_id"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_room_full_id"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="-30dp"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/review" />
+
+    <TextView
+        android:id="@+id/price_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_room_full_id"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="-30dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="1dp"
+        android:text="R$ - 250.00"
+        android:textColor="@color/colorPrimary"
+        android:textSize="21pt" />
+
+</RelativeLayout>

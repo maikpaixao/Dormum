@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
+
+    <item android:id="@+id/iconNotificacao" android:icon="@drawable/ic_notification" app:showAsAction="always"   android:title="@string/notificacao"/>
+    <item android:id="@+id/iconMessage" android:icon="@drawable/ic_close_envelope" app:showAsAction="always" android:title="@string/messagem"/>
+    <item android:id="@+id/iconAdd" android:icon="@drawable/ic_add_user_button" app:showAsAction="always" android:title="@string/adicionar"/>
+    <item android:id="@+id/iconSearch" android:icon="@drawable/ic_search" app:showAsAction="always" android:title="@string/procurar"/>
+    <item android:id="@+id/iconMenu" android:icon="@drawable/ic_more" app:showAsAction="always" android:title="@string/menu">
+        <menu>
+            <item android:id="@+id/logout" android:title="@string/logout"/>
+        </menu>
+    </item>
+</menu>
