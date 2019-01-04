@@ -5,24 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.ImovelActivity"
-    android:background="#f1f1f1">
+    android:background="#f3f3f3">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <EditText
             android:id="@+id/editText"
             android:layout_width="299dp"
             android:layout_height="56dp"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/view3"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="20dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="Titulo do Imóvel..."
             tools:layout_editor_absoluteX="73dp"
             tools:layout_editor_absoluteY="32dp" />
 
@@ -36,39 +39,115 @@
             android:layout_marginTop="11dp"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text="Descrição do Imóvel..."
             tools:layout_editor_absoluteX="73dp"
             tools:layout_editor_absoluteY="32dp" />
 
-        <EditText
-            android:id="@+id/editTex3"
-            android:layout_width="299dp"
-            android:layout_height="59dp"
-            android:layout_alignStart="@+id/editText"
+        <view
+            android:id="@+id/view3"
+            class="android.support.design.widget.TabItem"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="193dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name"
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="32dp"
-            android:layout_marginLeft="2dp"
-            android:layout_alignLeft="@+id/editText" />
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:background="@color/colorPrimary" />
 
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="195dp"
+            android:layout_height="42dp"
+            android:layout_alignTop="@+id/view3"
+            android:layout_alignBottom="@+id/view3"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="94dp"
+            android:layout_marginLeft="94dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="94dp"
+            android:layout_marginRight="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Alugar imóvel"
+            android:textColor="#fff"
+            android:textSize="14pt" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="46dp"
+            android:layout_below="@+id/editText2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="43dp"
+            android:layout_marginRight="43dp"
+            android:tooltipText="asdasd" />
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:layout_below="@+id/spinner"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="48dp"
+            android:layout_marginLeft="48dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="226dp"
+            android:layout_marginRight="226dp"
+            android:tooltipText="QTD" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:layout_width="314dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/editTex3"
-            android:layout_alignStart="@+id/editText2"
-            android:layout_alignLeft="@+id/editText2"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="2dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginTop="79dp"
-            android:layout_marginBottom="188dp"
-            android:text="Button" />
+            android:layout_below="@+id/editText6"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="35dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginRight="35dp"
+            android:background="@color/colorPrimaryDark"
+            android:text="Alugar"
+            android:textColor="#fff"
+            android:textSize="12pt" />
+
+        <EditText
+            android:id="@+id/editText6"
+            android:layout_width="148dp"
+            android:layout_height="61dp"
+            android:layout_below="@+id/spinner2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="44dp"
+            android:layout_marginLeft="44dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="196dp"
+            android:layout_marginRight="196dp"
+            android:ems="10"
+            android:inputType="numberDecimal"
+            android:text="Price..." />
+
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -65,7 +65,8 @@
             android:label="@string/title_activity_maps" />
         <activity android:name=".views.ImovelActivity" />
         <activity android:name=".views.ChatActivity" />
-        <activity android:name=".DetalhesActivity"></activity>
+        <activity android:name=".DetalhesActivity" />
+        <activity android:name=".RentActivity"></activity>
     </application>
 
 </manifest>
