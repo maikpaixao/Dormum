@@ -2,7 +2,10 @@ package dormumapp.com.br.dormum.utils
 
 import android.content.Context
 import android.content.Intent
+import android.content.res.Resources
 import android.database.DataSetObserver
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.support.design.R.id.image
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.widget.RecyclerView
@@ -40,9 +43,10 @@ class CustomAdapterAlternative (val imoveis: List<Imovel>, val context: Context)
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
 
         val imovel = imoveis.get(p1)
+        var draw: Drawable = BitmapDrawable(Resources.getSystem(), imovel.getImagemImovel())
 
         p0?.titleRoom.text = imovel.getTitleImovel()
-        p0?.ImagemRoom.setImageResource(imovel.getImagemImovel())
+        p0?.ImagemRoom.setImageDrawable(draw)
         p0?.priceRoom.text = imovel.getPriceImovel()
         p0?.reviewRoom.setImageResource(imovel.getReviewId())
 

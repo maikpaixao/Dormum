@@ -80,6 +80,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/register_username"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_userIcon"
@@ -112,6 +113,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/register_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_passwordIcon"
@@ -144,6 +146,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/register_pass_confirmation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_repasswordIcon"
@@ -176,6 +179,7 @@
                     android:tint="@color/white" />
 
                 <EditText
+                    android:id="@+id/register_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/imgView_emailIcon"
@@ -201,7 +205,7 @@
                 android:textColor="@color/textColor" />
 
             <Button
-                android:id="@+id/btn_signUp"
+                android:id="@+id/btn_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/chkBox1"
@@ -216,7 +220,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/btn_signUp"
+                android:layout_below="@+id/btn_signup"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:background="@color/transparent"

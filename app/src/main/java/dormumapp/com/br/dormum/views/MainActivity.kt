@@ -3,6 +3,10 @@ package dormumapp.com.br.dormum.views
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.parse.ParseException
+import com.parse.ParseUser
+import com.parse.SignUpCallback
 import dormumapp.com.br.dormum.R
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -15,5 +19,6 @@ class MainActivity : AppCompatActivity() {
         button_main.setOnClickListener(){
             startActivity(Intent(this,LoginActivity::class.java))
         }
+
     }
 }

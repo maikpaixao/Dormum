@@ -3,19 +3,19 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="280dp"
+    android:layout_width="285dp"
     android:id="@+id/custom_item"
-    android:layout_height="130dp">
+    android:layout_height="90dp">
 
     <ImageView
         android:id="@+id/image_room_id"
-        android:layout_width="190dp"
-        android:layout_height="130dp"
+        android:layout_width="140dp"
+        android:layout_height="match_parent"
         android:src="@drawable/room" />
 
     <TextView
         android:id="@+id/title_room_id"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -28,7 +28,22 @@
         android:layout_toEndOf="@+id/image_room_id"
         android:layout_toRightOf="@+id/image_room_id"
         android:text="Private Room in Recife"
-        android:textSize="9pt" />
+        android:textSize="10pt" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="123dp"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="-4dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="22dp"
+        android:layout_marginBottom="2dp"
+        android:layout_toRightOf="@+id/image_room_id"
+        app:srcCompat="@drawable/review" />
 
 
 </RelativeLayout>

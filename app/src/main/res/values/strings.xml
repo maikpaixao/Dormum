@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name">Dormum</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">mki0fEP4uiv0FqdslWE21KInrWtgi3y7WQUy3WEP</string>
+    <string name="back4app_client_key">7AMDNCVe6LoCxly414LWMXR0NVjobxi8TPNozZKb</string>
+
     <string name="title_activity_login">Sign in</string>
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

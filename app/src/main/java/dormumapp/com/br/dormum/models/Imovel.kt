@@ -1,10 +1,11 @@
 package dormumapp.com.br.dormum.models
 
+import android.graphics.Bitmap
 import android.media.Image
 import android.widget.ImageView
 import java.sql.Blob
 
-class Imovel(titleImovel: String, imagemImovel: Int, reviewId: Int, priceImovel: String){
+class Imovel(titleImovel: String, imagemImovel: Bitmap, reviewId: Int, priceImovel: String){
 
     private var titleImovel: String
     /**private var idImovel: Int
@@ -12,7 +13,7 @@ class Imovel(titleImovel: String, imagemImovel: Int, reviewId: Int, priceImovel:
     private var locationImovel: String
     private var typeImovel: String
     private var statusImovel: Boolean*/
-    private var imagemImovel: Int
+    private var imagemImovel: Bitmap
     private var reviewId: Int
     private var priceImovel: String
 
@@ -53,7 +54,7 @@ class Imovel(titleImovel: String, imagemImovel: Int, reviewId: Int, priceImovel:
         return this.statusImovel
     }
     */
-    fun getImagemImovel(): Int{
+    fun getImagemImovel(): Bitmap{
         return this.imagemImovel
     }
 

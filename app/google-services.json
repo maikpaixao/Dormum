@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1070671486706",
+    "firebase_url": "https://dormum-d6660.firebaseio.com",
+    "project_id": "dormum-d6660",
+    "storage_bucket": "dormum-d6660.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1070671486706:android:7576e2cf21a1a570",
+        "android_client_info": {
+          "package_name": "dormumapp.com.br.dormum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1070671486706-l6bbnetipi7u9jioqpfgv0ales2b3pka.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "dormumapp.com.br.dormum",
+            "certificate_hash": "ec30567063a4f0daa87f9f8e6553ab2eabfe5181"
+          }
+        },
+        {
+          "client_id": "1070671486706-bpfji4ro5v812r2iq9m8mul8drh90roi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8_OnsGAmhb8lVs2disZNhaEChAEWF_qw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1070671486706-bpfji4ro5v812r2iq9m8mul8drh90roi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

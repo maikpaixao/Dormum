@@ -20,9 +20,9 @@
         ></item>
 
     <item
-        android:title="chat"
+        android:title="mapa"
         android:id="@+id/mapa_btn"
-        android:icon="@drawable/ic_message"
+        android:icon="@drawable/ic_mapa"
         ></item>
 
     <item

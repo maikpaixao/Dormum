@@ -31,7 +31,7 @@ class CustomAdapter(val imoveis: List<Imovel>, val context: Context): RecyclerVi
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         val imovel = imoveis.get(p1)
         p0?.titleRoom.text = imovel.getTitleImovel()
-        p0?.ImagemRoom.setImageResource(imovel.getImagemImovel())
+        p0?.ImagemRoom.setImageBitmap(imovel.getImagemImovel())
     }
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {

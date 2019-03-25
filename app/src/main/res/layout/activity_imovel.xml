@@ -5,149 +5,226 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.ImovelActivity"
-    android:background="#f3f3f3">
+    android:background="#f1f1f1">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
+        android:layout_height="wrap_content"
+        android:paddingBottom="5dp">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="299dp"
-            android:layout_height="56dp"
-            android:layout_below="@+id/view3"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Titulo do Imóvel..."
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="32dp" />
-
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="301dp"
-            android:layout_height="56dp"
-            android:layout_below="@+id/editText"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="11dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Descrição do Imóvel..."
-            tools:layout_editor_absoluteX="73dp"
-            tools:layout_editor_absoluteY="32dp" />
-
-        <view
-            android:id="@+id/view3"
-            class="android.support.design.widget.TabItem"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="0dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:background="@color/colorPrimary" />
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="195dp"
-            android:layout_height="42dp"
-            android:layout_alignTop="@+id/view3"
-            android:layout_alignBottom="@+id/view3"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="94dp"
-            android:layout_marginLeft="94dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="94dp"
-            android:layout_marginRight="94dp"
-            android:layout_marginBottom="5dp"
-            android:text="Alugar imóvel"
-            android:textColor="#fff"
-            android:textSize="14pt" />
-
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="46dp"
-            android:layout_below="@+id/editText2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="44dp"
-            android:layout_marginLeft="44dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="43dp"
-            android:layout_marginRight="43dp"
-            android:tooltipText="asdasd" />
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="wrap_content"
-            android:layout_height="56dp"
-            android:layout_below="@+id/spinner"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="48dp"
-            android:layout_marginLeft="48dp"
-            android:layout_marginTop="13dp"
-            android:layout_marginEnd="226dp"
-            android:layout_marginRight="226dp"
-            android:tooltipText="QTD" />
-
-        <Button
-            android:layout_width="314dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/editText6"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="35dp"
-            android:layout_marginLeft="35dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="35dp"
-            android:layout_marginRight="35dp"
-            android:background="@color/colorPrimaryDark"
-            android:text="Alugar"
-            android:textColor="#fff"
-            android:textSize="12pt" />
-
-        <EditText
-            android:id="@+id/editText6"
-            android:layout_width="148dp"
-            android:layout_height="61dp"
-            android:layout_below="@+id/spinner2"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="44dp"
-            android:layout_marginLeft="44dp"
-            android:layout_marginTop="19dp"
-            android:layout_marginEnd="196dp"
-            android:layout_marginRight="196dp"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:text="Price..." />
+            <EditText
+                android:id="@+id/tituloImovel"
+                android:layout_width="299dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/view4"
+                android:layout_alignEnd="@+id/btn_imovel"
+                android:layout_alignRight="@id/btn_imovel"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginRight="1dp"
+                android:ems="10"
+                android:hint="Título do imóvel..."
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="73dp"
+                tools:layout_editor_absoluteY="32dp" />
 
 
-    </RelativeLayout>
+            <EditText
+                android:id="@+id/descricaoImovel"
+                android:layout_width="301dp"
+                android:layout_height="56dp"
+                android:layout_below="@+id/tituloImovel"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="11dp"
+                android:ems="10"
+                android:hint="Descrição do imóvel..."
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="73dp"
+                tools:layout_editor_absoluteY="32dp" />
+
+            <EditText
+                android:id="@+id/enderecoImovel"
+                android:layout_width="299dp"
+                android:layout_height="59dp"
+                android:layout_alignStart="@+id/tituloImovel"
+                android:layout_alignLeft="@+id/tituloImovel"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="193dp"
+                android:ems="10"
+                android:hint="Endereço do imóvel..."
+                android:inputType="textPersonName"
+                tools:layout_editor_absoluteX="73dp"
+                tools:layout_editor_absoluteY="32dp" />
+
+            <Button
+                android:id="@+id/btn_image"
+                android:layout_width="57dp"
+                android:layout_height="38dp"
+                android:layout_below="@+id/spinnerImovel"
+                android:layout_alignEnd="@+id/descricaoImovel"
+                android:layout_alignRight="@+id/descricaoImovel"
+                android:layout_marginTop="66dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:background="@drawable/img_button"
+                android:padding="8dp"
+                android:textColor="#f1f1f1"
+                android:textSize="10pt" />
+
+            <Spinner
+                android:id="@+id/spinnerImovel"
+                android:layout_width="298dp"
+                android:layout_height="48dp"
+                android:layout_below="@+id/enderecoImovel"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/border_spin" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="70dp"
+                android:layout_height="31dp"
+                android:layout_below="@+id/spinnerImovel"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="208dp"
+                android:text="Preço: "
+                android:textSize="10pt" />
+
+            <TextView
+                android:id="@+id/textView25"
+                android:textAlignment="viewEnd"
+                android:gravity="end"
+                android:layout_width="98dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/spinnerImovel"
+                android:layout_alignEnd="@+id/descricaoImovel"
+                android:layout_alignRight="@+id/descricaoImovel"
+                android:layout_marginStart="128dp"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="208dp"
+                android:layout_toEndOf="@+id/textView15"
+                android:layout_toRightOf="@+id/textView15"
+                android:text="Selecione Imagem"
+                android:textSize="10pt" />
+
+            <EditText
+                android:id="@+id/precoImovel"
+                android:layout_width="129dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerImovel"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="56dp"
+                android:ems="10"
+                android:hint="69.90"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/btn_imovel"
+                android:layout_width="300dp"
+                android:layout_marginBottom="10dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/spinnerQtd"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginStart="2dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="29dp"
+                android:background="@color/colorPrimary"
+                android:text="Inserir Imóvel"
+                android:textColor="#f1f1f1"
+                android:textSize="10pt" />
+
+            <Spinner
+                android:id="@+id/spinnerQtd"
+                android:layout_width="129dp"
+                android:layout_height="38dp"
+                android:layout_below="@+id/textView23"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="180dp"
+                android:layout_marginRight="180dp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/precoImovel"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_marginTop="-1dp"
+                android:text="Qtd. Pessoas" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_image"
+                android:layout_alignEnd="@+id/descricaoImovel"
+                android:layout_alignRight="@+id/descricaoImovel"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="Possui Wifi" />
+
+            <View
+                android:id="@+id/view4"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginRight="0dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/textView26"
+                android:layout_width="118dp"
+                android:layout_height="27dp"
+                android:layout_alignStart="@+id/descricaoImovel"
+                android:layout_alignLeft="@+id/descricaoImovel"
+                android:layout_alignTop="@+id/view4"
+                android:layout_alignEnd="@+id/view4"
+                android:layout_alignRight="@+id/view4"
+                android:layout_alignBottom="@+id/view4"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="189dp"
+                android:layout_marginRight="189dp"
+                android:layout_marginBottom="14dp"
+                android:text="Inserir Imovel"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
 </android.support.constraint.ConstraintLayout>
