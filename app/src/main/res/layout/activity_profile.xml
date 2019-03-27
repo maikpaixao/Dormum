@@ -7,44 +7,44 @@
     tools:context=".views.ProfileActivity"
     android:background="#f1f1f1">
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="310dp"
-            android:background="@color/colorAccent"
-            android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_marginTop="0dp"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="45dp"
-                android:src="@drawable/userimg" />
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="45dp"
+            android:src="@drawable/userimg" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_marginTop="10dp"
-                        android:text="joe Doe"
-                        android:textColor="#fff"
-                        android:textSize="21sp"
-                        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:text="joe Doe"
+            android:textColor="#fff"
+            android:textSize="21sp"
+            android:textStyle="bold" />
 
-                    <Button
-                        android:id="@+id/edit_profile_id"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="10dp"
-                        android:paddingLeft="30dp"
-                        android:paddingRight="30dp"
-                        android:background="@color/white"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_gravity="center_horizontal"
-                        android:text="Edit Profile" />
-                </LinearLayout>
+        <Button
+            android:id="@+id/edit_profile_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:text="Edit Profile"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="300dp"
@@ -106,5 +106,14 @@
             app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     </android.support.constraint.ConstraintLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <include layout="@layout/menu_botton_layout"></include>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

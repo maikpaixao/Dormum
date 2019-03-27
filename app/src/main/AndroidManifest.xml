@@ -71,7 +71,7 @@
 
         <activity android:name=".views.ImovelActivity" />
         <activity android:name=".views.ChatActivity" />
-        <activity android:name=".DetalhesActivity" />
+        <activity android:name=".views.ImovelDetalhesActivity" />
         <activity android:name=".views.EditProfileActivity"></activity>
     </application>
 

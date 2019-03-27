@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import dormumapp.com.br.dormum.R
 import dormumapp.com.br.dormum.models.Imovel
-import kotlinx.android.synthetic.main.custom_item.view.*
 import kotlinx.android.synthetic.main.custom_item_search.view.*
 
 class SearchAdapter(val imoveis: List<Imovel>, val context: Context): RecyclerView.Adapter<SearchAdapter.ViewHolder>() {
