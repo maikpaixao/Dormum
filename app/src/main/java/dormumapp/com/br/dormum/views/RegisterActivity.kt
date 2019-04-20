@@ -5,6 +5,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.support.v4.content.ContextCompat
 import android.text.TextUtils
 import android.util.Log
 import android.view.View
@@ -15,6 +16,8 @@ import com.parse.ParseException
 import com.parse.ParseObject
 import com.parse.ParseUser
 import dormumapp.com.br.dormum.R
+import dormumapp.com.br.dormum.dao.RepoUsuario
+import dormumapp.com.br.dormum.models.Usuario
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
 
@@ -25,13 +28,12 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        //var user = ParseObject("Usuarios")
-        var user = ParseUser()
+        var repositorio = RepoUsuario()
 
-        var nomeUsuario = register_username.text
-        var senhaUsuario = register_pass.text
-        var senhaUsuarioConfimacao = register_pass_confirmation.text
-        var emailUsuario = register_email.text
+        var nomeUsuario = register_username.text.toString()
+        var senhaUsuario = register_pass.text.toString()
+        var senhaUsuarioConfimacao = register_pass_confirmation.text.toString()
+        var emailUsuario = register_email.text.toString()
 
         btn_signup.setOnClickListener(){
             if(nomeUsuario.equals("") || senhaUsuario.equals("") || senhaUsuarioConfimacao.equals("") || emailUsuario.equals("")){
@@ -39,27 +41,9 @@ class RegisterActivity : AppCompatActivity() {
             }else if(!senhaUsuario.toString().equals(senhaUsuarioConfimacao.toString())){
                 Toast.makeText(this, "As senhas digitadas não são compatíveis.", Toast.LENGTH_LONG).show()
             }else{
-                user.username = nomeUsuario.toString()
-                user.setPassword(senhaUsuario.toString())
-                user.email = emailUsuario.toString()
-                user.put("sexo", "masculino")
-
-                //user.put("nomeUsuario", nomeUsuario.toString())
-                //user.put("senhaUsuario", senhaUsuario.toString().toInt())
-                //user.put("emailUsuario", emailUsuario.toString())
-
-                //user.saveInBackground(){
-                user.signUpInBackground(){
-                    if (it == null) {
-                        startActivity(Intent(this, LoginActivity::class.java))
-                    }else {
-                        ParseUser.logOut();
-                        Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
-                    }
-
-                }
-
-
+                var usuario = Usuario(nomeUsuario, senhaUsuario, emailUsuario, "", "")
+                repositorio.adicionarUsuario(LoginActivity::class.java, this, usuario)
+                startActivity(Intent(this, LoginActivity::class.java))
             }
         }
 

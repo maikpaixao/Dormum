@@ -3,28 +3,26 @@ package dormumapp.com.br.dormum.models
 import android.graphics.Bitmap
 import android.media.Image
 import android.widget.ImageView
+import com.parse.ParseFile
 import java.sql.Blob
 
-class Imovel(titleImovel: String, imagemImovel: Bitmap, reviewId: Int, priceImovel: String){
+class Imovel(titleImovel: String, descricaoImovel: String, enderecoImovel: String, cidadeImovel: String, qtdPessoas: String, imagemImovel: ParseFile, reviewId: Int, priceImovel: String){
 
     private var titleImovel: String
-    /**private var idImovel: Int
-    private var descriptionImovel: String
-    private var locationImovel: String
-    private var typeImovel: String
-    private var statusImovel: Boolean*/
-    private var imagemImovel: Bitmap
+    private var descricaoImovel: String
+    private var cidadeImovel: String
+    private var qtdPessoas: String
+    private var enderecoImovel: String
+    private var imagemImovel: ParseFile
     private var reviewId: Int
     private var priceImovel: String
 
     init {
         this.titleImovel = titleImovel
-        /**this.idImovel = idImovel
-        this.titleImovel = titleImovel
-        this.descriptionImovel = descriptionImovel
-        this.locationImovel = locationImovel
-        this.typeImovel = typeImovel
-        this.statusImovel = statusImovel*/
+        this.descricaoImovel = descricaoImovel
+        this.cidadeImovel = cidadeImovel
+        this.qtdPessoas = qtdPessoas
+        this.enderecoImovel = enderecoImovel
         this.imagemImovel = imagemImovel
         this.reviewId = reviewId
         this.priceImovel = priceImovel
@@ -33,29 +31,25 @@ class Imovel(titleImovel: String, imagemImovel: Bitmap, reviewId: Int, priceImov
     fun getTitleImovel(): String{
         return this.titleImovel
     }
-    /**
-    fun getIdImovel(): Int{
-        return this.idImovel
+
+    fun getDescricaoImovel(): String{
+        return this.descricaoImovel
     }
 
-    fun getDescriptionImovel(): String{
-        return this.descriptionImovel
+    fun getCidadeImovel(): String{
+        return this.cidadeImovel
     }
 
-    fun getLocationImovel(): String{
-        return this.locationImovel
+    fun getQtdPessoas(): String{
+        return this.qtdPessoas
     }
 
-    fun getTypeImovel(): String{
-        return this.typeImovel
-    }
-
-    fun getStatusImove(): Boolean{
-        return this.statusImovel
-    }
-    */
-    fun getImagemImovel(): Bitmap{
+    fun getImagemImovel(): ParseFile{
         return this.imagemImovel
+    }
+
+    fun getEnderecoImovel(): String{
+        return this.enderecoImovel
     }
 
     fun getReviewId(): Int{

@@ -10,21 +10,12 @@ import android.support.design.internal.BottomNavigationMenuView
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import dormumapp.com.br.dormum.R.id.*
 import kotlinx.android.synthetic.main.content_home.*
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import com.parse.ParseFile
-import com.parse.ParseObject
-import com.parse.ParseQuery
-import dormumapp.com.br.dormum.models.Imovel
 import dormumapp.com.br.dormum.utils.CustomAdapterAlternative
-import java.io.IOException
-import java.io.InputStream
-import java.net.URL
-import android.os.StrictMode
+import dormumapp.com.br.dormum.controllers.ControllerImovel
 
 
 class HomeActivity : AppCompatActivity(){
@@ -36,24 +27,11 @@ class HomeActivity : AppCompatActivity(){
         val bottomNavigationView = bottom_nav_view as BottomNavigationView
         removeNavigationShiftMode(bottomNavigationView)
 
-        var listaImoveis = ArrayList<Imovel>()
+        var db = ControllerImovel()
+        var listaImoveis = db.listarImoveis()
 
-        var query: ParseQuery<ParseObject> = ParseQuery.getQuery("Imoveis")
-
-        query.findInBackground(){obj,e->
-            var itera = obj.iterator()
-            var listaImoveis = ArrayList<Imovel>()
-
-            itera.forEach {
-                var arq = it.getParseFile("imgImovel") as ParseFile
-                var bmap = getBitmapFromURL(arq.url) as Bitmap
-
-                var imovel_1   = Imovel(it.getString("tituloImovel").toString(), bmap, R.drawable.review, "R$ - 250")
-                listaImoveis.add(imovel_1)
-            }
-            rview2.layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
-            rview2.adapter = CustomAdapterAlternative(listaImoveis, this@HomeActivity)
-        }
+        rview2.layoutManager = LinearLayoutManager(this@HomeActivity, RecyclerView.VERTICAL, false)
+        rview2.adapter = CustomAdapterAlternative(listaImoveis, this@HomeActivity)
 
         // Click on profile image goes to profile
         imageView3.setOnClickListener(){
@@ -80,7 +58,6 @@ class HomeActivity : AppCompatActivity(){
                     startActivity(Intent(this, ProfileActivity::class.java))
             }
             true
-
         }
     }
 
@@ -90,19 +67,4 @@ class HomeActivity : AppCompatActivity(){
         menuView.labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
         menuView.buildMenuView()
     }
-
-    fun getBitmapFromURL(src: String): Bitmap? {
-        val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
-        StrictMode.setThreadPolicy(policy)
-        try {
-            val url = URL(src)
-            val input = url.getContent() as InputStream
-            return BitmapFactory.decodeStream(input)
-        } catch (e: IOException) {
-            e.printStackTrace()
-            return null
-        }
-
-    }
-
 }

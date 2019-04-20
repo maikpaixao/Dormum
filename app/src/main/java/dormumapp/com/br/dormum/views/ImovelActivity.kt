@@ -13,6 +13,7 @@ import android.widget.SpinnerAdapter
 import com.parse.ParseFile
 import com.parse.ParseObject
 import dormumapp.com.br.dormum.R
+import dormumapp.com.br.dormum.controllers.ControllerImovel
 import dormumapp.com.br.dormum.models.Imovel
 import kotlinx.android.synthetic.main.activity_imovel.*
 import kotlinx.android.synthetic.main.activity_imovel.view.*
@@ -26,12 +27,11 @@ class ImovelActivity : AppCompatActivity() {
 
     var PICK_IMAGE: Int = 1
     lateinit var bitmap: Bitmap
+    var db = ControllerImovel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_imovel)
-
-        var imoveis = ParseObject("Imoveis")
 
         var listaStrings = arrayOf("Recife", "Jaboatão", "Olinda")
         spinnerImovel.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listaStrings) as SpinnerAdapter?
@@ -39,11 +39,12 @@ class ImovelActivity : AppCompatActivity() {
         var listaQtd = arrayOf(1, 2, 3, 4, 5)
         spinnerQtd.adapter = ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, listaQtd) as SpinnerAdapter?
 
-
-        var titulo = tituloImovel.text
-        var descricao = descricaoImovel.text
-        var preco = precoImovel.text
-        var endereco = enderecoImovel.text
+        var titulo = tituloImovel.text.toString()
+        var descricao = descricaoImovel.text.toString()
+        var preco = precoImovel.text.toString()
+        var endereco = enderecoImovel.text.toString()
+        var qtdPessoas = spinnerQtd.selectedItem.toString()
+        var cidade = spinnerImovel.selectedItem.toString()
 
         btn_image.setOnClickListener(){
             var intent = Intent()
@@ -53,30 +54,16 @@ class ImovelActivity : AppCompatActivity() {
         }
 
         btn_imovel.setOnClickListener(){
-            var qtdPessoas = spinnerQtd.selectedItem.toString()
-            var cidade = spinnerImovel.selectedItem.toString()
-
             var nomeFile = "${UUID.randomUUID()}.jpg"
             val blob = ByteArrayOutputStream()
-
             bitmap.compress(Bitmap.CompressFormat.JPEG, 50, blob)
 
             var imgArray = blob.toByteArray()
 
             var parseImg = ParseFile(nomeFile, imgArray)
 
-            //var imovelObj: Imovel = Imovel(tituloImovel.toString(), bitmap, R.drawable.review, "94,5")
-
-            imoveis.put("imgImovel", parseImg)
-            imoveis.put("tituloImovel", titulo.toString())
-            imoveis.put("descricaoImovel", descricao.toString())
-            imoveis.put("cidadeImovel", cidade)
-            imoveis.put("precoImovel", preco.toString())
-            imoveis.put("enderecoImovel", endereco.toString())
-            imoveis.put("quantidadePessoas", qtdPessoas)
-
-            imoveis.saveInBackground()
-
+            var imovel = Imovel(titulo, descricao, endereco, cidade, qtdPessoas, parseImg, R.drawable.review, preco)
+            db.adicionarImovel(imovel)
         }
     }
 
