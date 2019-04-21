@@ -2,7 +2,9 @@ package dormumapp.com.br.dormum.controllers
 
 import android.util.Log
 import dormumapp.com.br.dormum.dao.RepoImovel
+import dormumapp.com.br.dormum.exceptions.NotFoundElement
 import dormumapp.com.br.dormum.models.Imovel
+import dormumapp.com.br.dormum.models.Usuario
 import java.lang.Exception
 
 class ControllerImovel{
@@ -14,15 +16,27 @@ class ControllerImovel{
 
     fun adicionarImovel(imovel: Imovel){
         try {
-            if(imovel != null){
+            if(imovel == null){
+                throw NotFoundElement("Elemento não encontrado!")
+            }else{
                 repoImovel.adicionarImovel(imovel)
             }
         }catch (ex: Exception){
-            Log.d("TAG", "Não foi possível adicionar o imóvel.")
+            ex.printStackTrace()
         }
     }
 
     fun listarImoveis(): ArrayList<Imovel>{
         return repoImovel.listarImoveis()
+    }
+
+    fun alugarImovel(usuario: Usuario, imovel: Imovel){
+        try {
+            if(imovel != null && usuario !=null){
+                repoImovel.alugarImovel(usuario, imovel)
+            }
+        }catch (ex: Exception){
+            ex.printStackTrace()
+        }
     }
 }

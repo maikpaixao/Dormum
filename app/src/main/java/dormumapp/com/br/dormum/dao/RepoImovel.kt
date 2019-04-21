@@ -7,6 +7,7 @@ import com.parse.ParseObject
 import com.parse.ParseQuery
 import dormumapp.com.br.dormum.R
 import dormumapp.com.br.dormum.models.Imovel
+import dormumapp.com.br.dormum.models.Usuario
 import dormumapp.com.br.dormum.utils.CustomAdapterAlternative
 import kotlinx.android.synthetic.main.content_home.*
 
@@ -39,5 +40,9 @@ class RepoImovel{
             }
         }
         return this.listaImoveis
+    }
+
+    fun alugarImovel(usuario: Usuario, imovel: Imovel){
+        //metodo sem implementacao
     }
 }
